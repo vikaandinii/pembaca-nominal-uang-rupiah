@@ -1,0 +1,43 @@
+# .gitignore untuk Rupiah Detector
+
+# Dataset (ukuran besar, jangan di-push ke Git)
+dataset/
+*.jpg
+*.jpeg
+*.png
+*.webp
+!sample_augmented.png
+
+# Model files (upload ke Drive / LFS)
+models/*.keras
+models/*.h5
+*.keras
+*.h5
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.env
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Training output
+*.png
+!assets/*.png
+training_logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
