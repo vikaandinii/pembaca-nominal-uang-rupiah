@@ -30,10 +30,10 @@ def load_model():
 
 
 def preprocess_image(image_bytes: bytes) -> np.ndarray:
-    # sesuaikan ukuran gambar ke 224x224 dan normalisasi pixel ke 0-1
+    # sesuaikan ukuran gambar ke 224x224 dan normalisasi pixel ke standar MobileNetV2 (-1 s.d. 1)
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     img = img.resize(IMG_SIZE)
-    arr = np.array(img, dtype=np.float32) / 255.0
+    arr = (np.array(img, dtype=np.float32) / 127.5) - 1.0
     arr = np.expand_dims(arr, axis=0)
     return arr
 
